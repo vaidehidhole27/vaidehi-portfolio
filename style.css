@@ -20,15 +20,12 @@ a {
     color: inherit;
 }
 
+/* NAVIGATION */
 
-/* ================= NAVBAR ================= */
-
-.navbar {
+nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    width: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -36,7 +33,7 @@ a {
 
     padding: 20px 8%;
 
-    background: rgba(9, 9, 13, 0.94);
+    background: rgba(9, 9, 13, 0.92);
     backdrop-filter: blur(15px);
 
     border-bottom: 1px solid #24252e;
@@ -48,28 +45,28 @@ a {
     letter-spacing: 4px;
 }
 
-.logo span,
-.footer-logo span {
+.logo span {
     color: #8b7cff;
 }
 
-.nav-links {
+nav ul {
     display: flex;
     gap: 28px;
+    list-style: none;
 }
 
-.nav-links a {
+nav ul a {
     color: #a1a1ad;
     font-size: 14px;
     transition: 0.3s;
 }
 
-.nav-links a:hover {
+nav ul a:hover {
     color: #ffffff;
 }
 
 
-/* ================= HOME ================= */
+/* HERO */
 
 .hero {
     min-height: 92vh;
@@ -99,19 +96,21 @@ a {
     width: 100%;
     max-width: 900px;
 
+    margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 
-/* ================= PHOTO ================= */
+/* PHOTO */
 
-.photo-container {
+.profile-photo-box {
     width: 180px;
     height: 180px;
 
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
 
     padding: 5px;
 
@@ -124,9 +123,11 @@ a {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 
     overflow: hidden;
+
+    flex-shrink: 0;
 }
 
-.photo-container img {
+.profile-photo {
     width: 100%;
     height: 100%;
 
@@ -134,13 +135,13 @@ a {
 
     object-fit: cover;
 
+    object-position: center;
+
     border-radius: 50%;
 }
 
 
-/* ================= HERO TEXT ================= */
-
-.hello {
+.small-text {
     font-size: 12px;
 
     letter-spacing: 7px;
@@ -170,8 +171,10 @@ a {
     margin-bottom: 22px;
 }
 
-.hero-text {
+.description {
     max-width: 650px;
+
+    margin: 0 auto;
 
     color: #858591;
 
@@ -179,9 +182,9 @@ a {
 }
 
 
-/* ================= BUTTONS ================= */
+/* BUTTONS */
 
-.buttons {
+.hero-buttons {
     display: flex;
 
     justify-content: center;
@@ -191,7 +194,8 @@ a {
     margin-top: 35px;
 }
 
-.btn {
+.main-button,
+.outline-button {
     display: inline-block;
 
     padding: 14px 25px;
@@ -203,30 +207,36 @@ a {
     transition: 0.3s;
 }
 
-.primary {
+.main-button {
     background: #ffffff;
 
     color: #09090d;
 }
 
-.secondary {
+.main-button:hover {
+    transform: translateY(-5px);
+}
+
+.outline-button {
     border: 1px solid #3c3d48;
 
     color: #ffffff;
 }
 
-.btn:hover {
+.outline-button:hover {
+    border-color: #8176ff;
+
     transform: translateY(-5px);
 }
 
 
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 
-.section {
+section:not(.hero) {
     padding: 110px 8%;
 }
 
-.label {
+.section-label {
     text-align: center;
 
     font-size: 11px;
@@ -238,7 +248,7 @@ a {
     margin-bottom: 15px;
 }
 
-.section-title {
+section > h2 {
     text-align: center;
 
     font-size: clamp(35px, 5vw, 58px);
@@ -249,9 +259,9 @@ a {
 }
 
 
-/* ================= ABOUT ================= */
+/* ABOUT */
 
-.about-card {
+.about-box {
     max-width: 850px;
 
     margin: auto;
@@ -269,28 +279,28 @@ a {
     transition: 0.3s;
 }
 
-.about-card:hover {
+.about-box:hover {
     transform: translateY(-5px);
 
-    border-color: #6258c9;
+    border-color: #555664;
 }
 
-.about-card h3 {
+.about-box h3 {
     font-size: 30px;
 
     margin-bottom: 25px;
 }
 
-.about-card p {
+.about-box p {
     color: #90909c;
 
     margin: 14px 0;
 }
 
 
-/* ================= SKILLS ================= */
+/* SKILLS */
 
-.skills-container {
+.skills-grid {
     max-width: 1100px;
 
     margin: auto;
@@ -326,7 +336,7 @@ a {
     margin-bottom: 22px;
 }
 
-.skill-list {
+.skills-box {
     display: flex;
 
     flex-wrap: wrap;
@@ -336,7 +346,7 @@ a {
     gap: 10px;
 }
 
-.skill-list span {
+.skills-box span {
     padding: 9px 14px;
 
     border: 1px solid #34353f;
@@ -350,7 +360,7 @@ a {
     transition: 0.3s;
 }
 
-.skill-list span:hover {
+.skills-box span:hover {
     color: #ffffff;
 
     border-color: #8176ff;
@@ -359,9 +369,9 @@ a {
 }
 
 
-/* ================= PROJECTS ================= */
+/* PROJECTS */
 
-.projects-container {
+.projects-grid {
     max-width: 1100px;
 
     margin: auto;
@@ -413,7 +423,7 @@ a {
     margin-bottom: 25px;
 }
 
-.project-tags {
+.project-features {
     display: flex;
 
     flex-wrap: wrap;
@@ -423,7 +433,7 @@ a {
     margin-bottom: 25px;
 }
 
-.project-tags span {
+.project-features span {
     padding: 7px 12px;
 
     border: 1px solid #34353f;
@@ -435,7 +445,7 @@ a {
     font-size: 11px;
 }
 
-.project-btn {
+.project-button {
     display: inline-block;
 
     padding: 12px 20px;
@@ -451,7 +461,7 @@ a {
     transition: 0.3s;
 }
 
-.project-btn:hover {
+.project-button:hover {
     transform: translateY(-4px);
 }
 
@@ -472,288 +482,9 @@ a {
 }
 
 
-/* ================= CERTIFICATES ================= */
+/* CERTIFICATES */
 
-.certificate-intro {
+.section-description {
     max-width: 650px;
 
-    margin: -25px auto 50px;
-
-    text-align: center;
-
-    color: #858591;
-}
-
-.certificate-container {
-    max-width: 1100px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 22px;
-}
-
-.certificate-card {
-    position: relative;
-
-    padding: 32px;
-
-    min-height: 280px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    border: 1px solid #292a33;
-
-    border-radius: 24px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #111117,
-            #0d0d12
-        );
-
-    transition: 0.35s;
-}
-
-.certificate-card:hover {
-    transform: translateY(-8px);
-
-    border-color: #7569e8;
-
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-}
-
-.certificate-icon {
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 16px;
-
-    border: 1px solid #3b3c48;
-
-    color: #bdb8ff;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 20px;
-}
-
-.certificate-card h3 {
-    font-size: 23px;
-
-    line-height: 1.3;
-
-    margin-bottom: 12px;
-}
-
-.certificate-card p {
-    color: #858591;
-
-    font-size: 14px;
-
-    margin-bottom: 25px;
-}
-
-.certificate-btn {
-    align-self: flex-start;
-
-    display: inline-block;
-
-    padding: 12px 20px;
-
-    border-radius: 25px;
-
-    background: #ffffff;
-
-    color: #09090d;
-
-    font-size: 12px;
-
-    transition: 0.3s;
-}
-
-.certificate-btn:hover {
-    transform: translateY(-4px);
-}
-
-
-/* ================= CONTACT ================= */
-
-.contact-section {
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(91, 75, 220, 0.10),
-            transparent 45%
-        );
-}
-
-.contact-text {
-    color: #858591;
-
-    margin-bottom: 35px;
-}
-
-.contact-buttons {
-    max-width: 600px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 15px;
-}
-
-.contact-buttons a {
-    padding: 18px;
-
-    border: 1px solid #2b2c35;
-
-    border-radius: 18px;
-
-    background: #101015;
-
-    color: #c6c6cf;
-
-    transition: 0.3s;
-}
-
-.contact-buttons a:hover {
-    transform: translateY(-6px);
-
-    border-color: #7770dc;
-
-    color: #ffffff;
-}
-
-
-/* ================= FOOTER ================= */
-
-footer {
-    padding: 45px 8%;
-
-    text-align: center;
-
-    border-top: 1px solid #202129;
-
-    background: #07070a;
-}
-
-.footer-logo {
-    font-size: 22px;
-
-    font-weight: bold;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 10px;
-}
-
-footer p {
-    color: #62626e;
-
-    font-size: 12px;
-
-    margin: 5px;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 800px) {
-
-    .navbar {
-        flex-direction: column;
-
-        gap: 15px;
-
-        padding: 18px 5%;
-    }
-
-    .nav-links {
-        gap: 12px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-    .section {
-        padding: 85px 5%;
-    }
-
-    .hero {
-        min-height: 85vh;
-
-        padding: 70px 20px;
-    }
-
-    .photo-container {
-        width: 150px;
-        height: 150px;
-    }
-
-    .hero h1 {
-        letter-spacing: -3px;
-    }
-
-    .skills-container,
-    .projects-container,
-    .certificate-container {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-buttons {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .hero h1 {
-        font-size: 55px;
-    }
-
-    .hero h2 {
-        font-size: 17px;
-    }
-
-    .buttons {
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-    .btn {
-        width: 210px;
-
-        text-align: center;
-    }
-
-    .project-card,
-    .certificate-card {
-        padding: 27px;
-    }
-}
+    margin: -20px auto 45
