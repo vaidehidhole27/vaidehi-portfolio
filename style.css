@@ -51,9 +51,12 @@ section h2{font-size:36px;margin-bottom:30px;font-weight:700}
 .project-button{display:inline-block;margin-top:10px;background:#111;color:#fff;padding:10px 18px;border-radius:25px;font-size:13px}
 .coming{background:#fef3c7;color:#d97706;display:inline-block;padding:6px 12px;border-radius:20px;font-size:11px;margin-top:15px;font-weight:700}
 
-.contact-text{color:#666;margin-bottom:20px}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.contact-card{background:#fff;border:1px solid #eee;padding:24px;border-radius:16px;display:block;transition:0.3s}
+/* CONTACT - MADHE ANLAA AANI LINKEDIN KADHLA */
+#contact{text-align:center;background:#fff}
+#contact h2{text-align:center}
+.contact-text{color:#666;margin-bottom:25px;text-align:center}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:600px;margin:0 auto;justify-content:center}
+.contact-card{background:#fff;border:1px solid #eee;padding:24px;border-radius:16px;display:block;transition:0.3s;text-align:left}
 .contact-card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(0,0,0,0.08)}
 .contact-icon{font-size:26px;margin-bottom:10px}
 .contact-card h4{margin-bottom:5px}
